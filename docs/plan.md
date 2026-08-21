@@ -38,14 +38,29 @@ where two paragraphs each ran 5.8.
 **A card that grows past 350 characters is the signal to cut, not to widen the range.** The
 longer copy each card used to carry is still in `content/projects.md`, so nothing is lost.
 
-## Phase 2 — publish
+## Phase 2 — publish ✅ done 2026-08-21
 
-- [ ] **Confirm https://agentic-workspaces.com resolves.** The page links it, and it went up
-      the same day. It's the only link here that depends on a host that isn't already old.
-- [ ] Create the public GitHub repo named `batirko.github.io` (**my call, not the agent's**)
-- [ ] Turn on GitHub Pages, serving from `main`, root
-- [ ] Open the live URL on a phone and on a desktop before telling anyone
+**Live at https://batirko.github.io.**
+
+- [x] Confirmed every outbound link resolves, including agentic-workspaces.com, which went up
+      the same day
+- [x] Created the public repo `batirko.github.io`
+- [x] Pages serves from `main` at the root, HTTPS enforced, build green
+- [ ] Open the live URL on a phone before telling anyone
 - [ ] Add the URL to the LinkedIn profile and to the GitHub profile
+
+### The published history starts at one commit, on purpose
+
+The scaffold history carried reference material this repo shouldn't publish: education, the
+languages, and paths into a private repo. Deleting the file would not have removed it, because
+git keeps the history. So the material was cut, and the public history was created fresh from
+the redacted tree.
+
+**The full original history is preserved locally on the `private-history` branch. Never push
+it.** If you ever need what was cut, it is there.
+
+`content/about.md` now says what is deliberately absent and why, so a future session doesn't
+read the gap as an oversight and go looking to fill it.
 
 ## Decisions — settled 2026-08-21
 
