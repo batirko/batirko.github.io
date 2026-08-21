@@ -1,0 +1,450 @@
+/* Hallmark · genre: modern-minimal · macrostructure: Long Document (row variant) · theme: Night
+ * nav: none — the masthead is the header, in flow, not sticky
+ * footer: Ft4 Dense typographic colophon
+ * feature: F3 Tabular spec sheet (knobs: columns=2 key/val, rules=every row, numbers=tabular)
+ * cta: C3 Typographic link (knobs: underline=solid, hover=thicken, arrow=none)
+ * enrichment: none — typography only. Two real product figures, one inside each project it belongs to.
+ * motion: none. Nothing moves on load or on scroll. The one moving image plays only when a
+ *         reader presses the button.
+ * theme axes: paper band dark-first · display grotesk-sans · accent chromatic lime 130°
+ * Hallmark · pre-emit critique: P5 H5 E5 S4 R5 V5
+ *
+ * Deliberate deviations, and why:
+ *  · Six type sizes rather than five. A grotesk needs a step between the deck and the project
+ *    title that a five-size scale does not leave room for.
+ *  · The page runs projects first and the bio after them, at the owner's direction. The order
+ *    in docs/design-brief.md predates that call.
+ *  · Prose measure falls under 45ch below roughly 480px. No readable size reaches 45ch on a
+ *    320px screen; the measure is in range from 480px up.
+ *
+ * Every colour and every font here resolves through a token in tokens.css.
+ */
+
+/* ── Faces ─────────────────────────────────────────────────────────────────
+   Served from this repo. No unicode-range, so any glyph the subset lacks
+   (≥, arrows) falls through to the next family in the stack instead of tofu. */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("fonts/ibm-plex-sans-var.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/ibm-plex-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/ibm-plex-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Ground ────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { overflow-x: clip; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left));
+  padding-block-end: max(var(--space-2xl), env(safe-area-inset-bottom));
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: var(--weight-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+p { margin: 0; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--color-ink);
+}
+
+/* Already monospace in a spec value, so it needs no optical correction. */
+.spec dd code { font-size: 1em; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-style: normal;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+/* ── Masthead ──────────────────────────────────────────────────────────── */
+
+.mast__inner {
+  max-width: var(--page);
+  margin-inline: auto;
+  border-block-end: var(--rule-hair) solid var(--color-rule);
+  padding-block: var(--space-xl) var(--space-lg);
+}
+
+.mast__role,
+.section__title,
+.spec dt,
+.entry__links,
+.figure__cap,
+.colophon__text,
+.toggle {
+  font-family: var(--font-mono);
+}
+
+.mast__role {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  line-height: 1.4;
+  color: var(--color-muted);
+}
+
+.mast__name {
+  margin-block-start: var(--space-md);
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: 1.04;
+  letter-spacing: var(--track-display);
+}
+
+.mast__lede {
+  max-width: 32ch;
+  margin-block-start: var(--space-lg);
+  font-size: var(--text-lg);
+  line-height: 1.3;
+  letter-spacing: var(--track-lede);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+/* ── Page and sections ─────────────────────────────────────────────────── */
+
+.page {
+  max-width: var(--page);
+  margin-inline: auto;
+}
+
+.section { padding-block: var(--space-xl) var(--space-2xl); }
+
+.section--about { padding-block: var(--space-2xl) var(--space-xl); }
+
+.section--close { padding-block: 0 var(--space-xl); }
+
+.section__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-block-end: var(--space-lg);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  line-height: 1.4;
+  color: var(--color-muted);
+}
+
+.section__title::before {
+  content: "";
+  flex: none;
+  inline-size: 0.5em;
+  block-size: 0.5em;
+  background: var(--color-mark);
+}
+
+/* ── Entries · identity left, reading right ────────────────────────────────
+   The left column holds what the project is called, what it does in one line,
+   and where to go. The right column holds the argument, the proof and the
+   spec. A reader who only scans the left column still gets four names, four
+   claims and six links. */
+
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, var(--side)) minmax(0, 1fr);
+  gap: var(--space-2xl);
+  padding-block-end: var(--space-xl);
+}
+
+.entry + .entry {
+  border-block-start: var(--rule-hair) solid var(--color-rule);
+  padding-block-start: var(--space-xl);
+}
+
+.entry:last-child { padding-block-end: 0; }
+
+.entry__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-display);
+  line-height: 1.12;
+  letter-spacing: var(--track-title);
+}
+
+.entry__deck {
+  margin-block-start: var(--space-sm);
+  font-size: var(--text-md);
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+.entry__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin-block-start: var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Prose ─────────────────────────────────────────────────────────────── */
+
+.prose { max-width: var(--measure); }
+
+.prose--wide { max-width: 66ch; }
+
+.prose > p + p { margin-block-start: var(--space-lg); }
+
+.prose__handoff {
+  margin-block-start: var(--space-xl);
+  color: var(--color-muted);
+}
+
+/* ── Figures ───────────────────────────────────────────────────────────────
+   Real screenshots, hairline border, no re-drawn browser chrome. They take
+   the whole right column, so they run wider than the prose above them. */
+
+.figure {
+  margin: var(--space-lg) 0 0;
+  max-width: 34rem;
+}
+
+.figure__img {
+  inline-size: 100%;
+  border: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper-2);
+}
+
+.figure__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-block-start: var(--space-sm);
+}
+
+.figure__cap {
+  flex: 1 1 18rem;
+  max-width: 60ch;
+  font-size: var(--text-xs);
+  line-height: 1.55;
+  color: var(--color-muted);
+}
+
+/* ── The toggle ────────────────────────────────────────────────────────────
+   Hidden until the script runs, so a page without JS never shows a dead
+   control. Nothing animates; the button changes colour and the image swaps. */
+
+.toggle {
+  flex: none;
+  margin: 0;
+  padding: var(--space-2xs) var(--space-sm);
+  min-block-size: 2rem;
+  border: var(--rule-hair) solid var(--color-border);
+  border-radius: var(--radius-none);
+  background: var(--color-paper);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+
+.toggle[hidden] { display: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .toggle:hover { color: var(--color-accent); border-color: var(--color-accent); }
+}
+
+.toggle:focus-visible {
+  outline: var(--rule-thick) solid var(--color-focus);
+  outline-offset: 2px;
+  transition: none;
+}
+
+.toggle:active { color: var(--color-ink); border-color: var(--color-neutral); }
+
+.toggle[aria-pressed="true"] { color: var(--color-accent); border-color: var(--color-accent); }
+
+.toggle:disabled { opacity: 0.55; cursor: not-allowed; }
+
+@media (pointer: coarse) {
+  .toggle { min-block-size: 2.75rem; padding-inline: var(--space-md); }
+}
+
+/* ── Spec · two columns, a rule on every row ───────────────────────────── */
+
+.spec {
+  margin: var(--space-lg) 0 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.spec__row {
+  display: grid;
+  grid-template-columns: minmax(0, 7rem) minmax(0, 1fr);
+  gap: var(--space-md);
+  padding-block: var(--space-sm);
+  border-block-start: var(--rule-hair) solid var(--color-rule);
+}
+
+.spec__row:last-child { border-block-end: var(--rule-hair) solid var(--color-rule); }
+
+.spec dt {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+.spec dd {
+  margin: 0;
+  max-width: 68ch;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: var(--color-ink);
+}
+
+/* ── Links · typographic, no box, no arrow ─────────────────────────────── */
+
+.link {
+  color: var(--color-accent);
+  white-space: nowrap;
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-rule);
+  text-decoration-thickness: var(--rule-hair);
+  text-underline-offset: 0.24em;
+  transition: text-decoration-color var(--dur-fast) var(--ease-out),
+              text-decoration-thickness var(--dur-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: var(--rule-thick);
+  }
+}
+
+.link:focus-visible {
+  outline: var(--rule-thick) solid var(--color-focus);
+  outline-offset: 3px;
+  text-decoration-color: var(--color-accent);
+  transition: none;
+}
+
+.link:active { color: var(--color-ink); text-decoration-color: var(--color-ink); }
+
+/* ── Elsewhere · two links, and that is the whole section ──────────────── */
+
+.elsewhere {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg) var(--space-xl);
+}
+
+.link--lg {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-display);
+  line-height: 1.12;
+  letter-spacing: var(--track-title);
+  text-underline-offset: 0.16em;
+}
+
+/* ── Colophon ──────────────────────────────────────────────────────────── */
+
+.colophon {
+  max-width: var(--page);
+  margin-inline: auto;
+  border-block-start: var(--rule-hair) solid var(--color-rule);
+  padding-block-start: var(--space-md);
+}
+
+.colophon__text {
+  max-width: 78ch;
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+/* ── Small screens ─────────────────────────────────────────────────────────
+   Below the fold-out width the row collapses: identity above, reading below.
+   The links stay with the identity, so they are never stranded at the end of
+   a long passage. */
+
+@media (max-width: 52rem) {
+  .entry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .entry__deck { max-width: var(--measure); }
+}
+
+@media (max-width: 40rem) {
+  /* Hyphenate, but never on a short word and never on a two-letter fragment. */
+  .prose p, .prose--wide p {
+    hyphens: auto;
+    hyphenate-limit-chars: 8 4 4;
+  }
+
+  .spec__row { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); }
+
+  .spec dt { line-height: 1.4; }
+
+  .mast__lede { max-width: none; }
+}
+
+/* ── Reduced motion, forced colours ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .link:focus-visible, .toggle:focus-visible { outline-color: Highlight; }
+  .figure__img, .toggle { border-color: CanvasText; }
+  .section__title::before { background: CanvasText; }
+}

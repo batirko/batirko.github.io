@@ -1,0 +1,123 @@
+/* Hallmark · design tokens · genre: modern-minimal · theme: Night (custom)
+ * axes — paper band: dark-first (16.5%) · display style: grotesk-sans · accent hue: chromatic lime (130°)
+ *
+ * Portable. Every colour and every font on this page resolves through a name declared here.
+ * The stylesheet declares no literal colour and no literal font-family.
+ *
+ * Designed dark and adapted to light. Lime cannot stay lime on a light ground and hold its
+ * contrast, so light mode runs the accent deeper. The two accent tokens keep that honest:
+ * --color-accent is always safe to set text in, --color-mark is the decorative note.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* ── Type families ─────────────────────────────────────────────────────
+     Two families. IBM Plex Sans carries the name, the titles and the prose;
+     its variable file covers every weight from one 40 KB download. IBM Plex
+     Mono carries every label, spec value, caption and the colophon. Both are
+     served from fonts/ in this repo. No CDN, no third-party request. */
+  --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ── Type scale ────────────────────────────────────────────────────────
+     Six sizes reach the page. A grotesk reads smaller than a serif at the
+     same pixel size, so the body sits at 16–17px and the display steps are
+     tighter than a 1.25 ratio would give. */
+  --text-xs:      0.8125rem;                                          /* 13px  */
+  --text-sm:      0.9375rem;                                          /* 15px  */
+  --text-md:      clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);            /* 16→17 */
+  --text-lg:      clamp(1.1875rem, 1.1rem + 0.4vw, 1.3125rem);        /* 19→21 */
+  --text-xl:      clamp(1.375rem, 1.2rem + 0.9vw, 1.625rem);          /* 22→26 */
+  --text-display: clamp(2.25rem, 1.7rem + 2.8vw, 3.25rem);            /* 36→52 */
+
+  /* ── Weights ───────────────────────────────────────────────────────────
+     Body 400 against display 600 is a 200-unit contrast, which is where a
+     grotesk stops looking like a default and starts looking set. Plex Sans
+     is variable, so nothing is synthesised. */
+  --weight-body:    400;
+  --weight-medium:  500;
+  --weight-display: 600;
+
+  /* ── Tracking ──────────────────────────────────────────────────────────
+     A grotesk at display size needs negative tracking or it reads loose. */
+  --track-display: -0.03em;
+  --track-title:   -0.025em;
+  --track-lede:    -0.012em;
+  --track-label:    0.14em;
+
+  /* ── Measure and page ──────────────────────────────────────────────────
+     Each project is a row: identity on the left, reading on the right. Prose
+     stops at 62ch inside the right column; figures take the whole column, so
+     they break past the prose. That step is the page's asymmetry. */
+  --measure:   62ch;
+  --page:      62rem;
+  --side:      16rem;
+  --gutter:    clamp(1rem, 4vw, 2.5rem);
+
+  /* ── Space · 4pt scale ─────────────────────────────────────────────────── */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  /* ── Rules and radii ─────────────────────────────────────────────────── */
+  --rule-hair:   1px;
+  --rule-thick:  2px;
+  --radius-none: 0;
+  --radius-sm:   2px;
+
+  /* ── Motion ────────────────────────────────────────────────────────────
+     Nothing on this page moves on load or on scroll. These cover state
+     changes only: a link taking its underline, a button taking its border. */
+  --dur-fast:    120ms;
+  --dur-base:    200ms;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ── Colour · light ────────────────────────────────────────────────────
+     Anchor hue 105, a barely warm stone. Every neutral carries a trace of it,
+     so no grey on the page is flat.
+
+     The anchor moved off cool blue-grey deliberately. agentic-workspaces.com,
+     which this page links, runs oklch(97.5% .004 250) as its light paper. The
+     old anchor here put this page 0.001 away from it in OKLab, which is the
+     same colour. Stone sits 0.018 away, which reads as a different paper. */
+  --color-paper:   oklch(96.2% 0.009 105);
+  --color-paper-2: oklch(93.2% 0.012 105);
+  --color-rule:    oklch(86.0% 0.011 105);
+  --color-border:  oklch(58.0% 0.014 105);
+  --color-neutral: oklch(66.0% 0.012 105);
+  --color-muted:   oklch(45.0% 0.013 100);
+  --color-ink:     oklch(19.5% 0.013 95);
+  --color-accent:  oklch(48.0% 0.155 124);
+  --color-mark:    oklch(48.0% 0.155 124);
+  --color-focus:   oklch(48.0% 0.155 124);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* The palette as it was designed. Light type on dark paper reads
+       optically heavier, so the body weight drops 50 units. */
+    --weight-body: 350;
+
+    --color-paper:   oklch(16.5% 0.011 105);
+    --color-paper-2: oklch(20.5% 0.013 105);
+    --color-rule:    oklch(30.5% 0.012 105);
+    --color-border:  oklch(51.0% 0.012 105);
+    --color-neutral: oklch(49.0% 0.011 105);
+    --color-muted:   oklch(72.0% 0.011 100);
+    --color-ink:     oklch(94.5% 0.006 105);
+    --color-accent:  oklch(85.0% 0.190 130);
+    --color-mark:    oklch(85.0% 0.190 130);
+    --color-focus:   oklch(85.0% 0.190 130);
+  }
+}

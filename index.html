@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vitalii Batyr</title>
+<meta name="description" content="I build platforms for the people who build software, and side projects that keep humans in charge of AI-assisted work.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Vitalii Batyr">
+<meta property="og:description" content="I build platforms for the people who build software, and side projects that keep humans in charge of AI-assisted work.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/ibm-plex-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast__inner">
+    <p class="mast__role">Product manager, developer platforms</p>
+    <h1 class="mast__name">Vitalii Batyr</h1>
+    <p class="mast__lede">I build platforms for the people who build software, and side projects
+      that keep humans in charge of AI-assisted work.</p>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="section" aria-labelledby="projects">
+    <h2 class="section__title" id="projects">Projects</h2>
+
+    <article class="entry">
+      <div class="entry__id">
+        <h3 class="entry__name">Agentic Workspaces</h3>
+        <p class="entry__deck">A front door for agentic workspaces: the repos you clone and
+          work inside, findable by the job you need one for.</p>
+        <p class="entry__links">
+          <a class="link" href="https://agentic-workspaces.com">Live</a>
+        </p>
+      </div>
+      <div class="entry__main">
+        <div class="prose">
+          <p>An agentic workspace is a repo you clone to live in rather than to run: your agent
+          arrives equipped, and your work accumulates inside. These repos have no marketplace, so
+          people find them by accident. The index is the front door, and you browse it by the job
+          you need one for.</p>
+        </div>
+
+        <figure class="figure">
+          <img class="figure__img" src="assets/agentic-workspaces.png"
+               width="1400" height="845" loading="lazy" decoding="async"
+               alt="The front page of an index called Agentic Workspaces. A headline reads
+                    workspaces your agent lives in, above a row of counts and a grid of cards,
+                    each naming a repository, its owner and its subject.">
+          <div class="figure__foot">
+            <figcaption class="figure__cap">The front page. Each card is one workspace, tagged
+              with the job it was built for. Every count is read from the crawl, so they move
+              each time it runs.</figcaption>
+          </div>
+        </figure>
+
+        <dl class="spec">
+          <div class="spec__row">
+            <dt>Built with</dt>
+            <dd>TypeScript &middot; Node &ge;20 &middot; Vitest &middot; GitHub Actions &middot;
+              a static generator over one JSON file, no framework and no client-side
+              fetching</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Status</dt>
+            <dd>Live and actively developed. Every entry is found by a crawler rather than
+              added by hand.</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Repo</dt>
+            <dd>Private while it&rsquo;s being built.</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__id">
+        <h3 class="entry__name">writtten</h3>
+        <p class="entry__deck">You write every word. The AI never touches your prose, it reads
+          alongside you and points out what you missed.</p>
+        <p class="entry__links">
+          <a class="link" href="https://writtten.com">Live</a>
+          <a class="link" href="https://github.com/batirko/writtten">Source</a>
+        </p>
+      </div>
+      <div class="entry__main">
+        <div class="prose">
+          <p>Most AI writing tools generate text for you to edit. writtten does the opposite. A
+          live feed of observations runs beside your document as you revise, flagging
+          contradictions, unclear passages, unsupported claims and missing topics. There is no
+          “Apply suggestion” button, and there never will be.</p>
+        </div>
+
+        <figure class="figure">
+          <img class="figure__img" id="writtten-frame"
+               src="assets/writtten-loop-still.png"
+               data-still="assets/writtten-loop-still.png"
+               data-loop="assets/writtten-loop.gif"
+               width="1280" height="800" loading="lazy" decoding="async"
+               alt="A draft document beside a column of observations. Two passages are
+                    highlighted at once: one committing to a Q2 launch, one to Q3. The open
+                    observation is labelled contradiction.">
+          <div class="figure__foot">
+            <figcaption class="figure__cap">The Timeline section commits to a public launch in
+              Q2. Success metrics commits to Q3. writtten flags both passages at once and leaves
+              the decision to the writer.</figcaption>
+            <button class="toggle" type="button" id="writtten-toggle"
+                    aria-controls="writtten-frame" aria-pressed="false" hidden>Play the loop</button>
+          </div>
+        </figure>
+
+        <dl class="spec">
+          <div class="spec__row">
+            <dt>Built with</dt>
+            <dd>React &middot; TypeScript &middot; TipTap and ProseMirror &middot; local-first PWA
+              on IndexedDB &middot; bring your own key, called straight from the browser</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Status</dt>
+            <dd>Early and actively developed. The core loop works. Open-sourced to get the idea
+              scrutinised and to find collaborators.</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Repo</dt>
+            <dd>Public &middot; Apache-2.0</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__id">
+        <h3 class="entry__name">mova</h3>
+        <p class="entry__deck">A language-learning workspace run by your AI coding agent, in plain
+          files you own.</p>
+        <p class="entry__links">
+          <a class="link" href="https://github.com/batirko/mova">Source</a>
+        </p>
+      </div>
+      <div class="entry__main">
+        <div class="prose">
+          <p>You pick the language and the goal. The agent interviews you, builds a curriculum,
+          then teaches, drills and tracks every word and every error you get wrong. It started
+          from my own language learning: I wanted the record of every mistake to stay in files I
+          own.</p>
+        </div>
+
+        <figure class="figure">
+          <img class="figure__img" src="assets/mova-hub.png"
+               width="1400" height="891" loading="lazy" decoding="async"
+               alt="A workspace hub page. A row of figures reads days to exam, units done, topics
+                    taught, things to remember, items to review today, and study sessions. Below
+                    it, the deck, then a panel headed what to do next.">
+          <div class="figure__foot">
+            <figcaption class="figure__cap">The workspace hub: days to exam, units done, items
+              due, and what to do next. Every number is read from the file that owns it. This one
+              is a generated demo with an invented learner.</figcaption>
+          </div>
+        </figure>
+
+        <dl class="spec">
+          <div class="spec__row">
+            <dt>Built with</dt>
+            <dd>Node &ge;20 and git &middot; plain markdown and HTML you can open from disk
+              &middot; agent-agnostic &middot; self-contained offline pages, no CDN, no external
+              fonts</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Status</dt>
+            <dd>Works end to end. Seven languages start straight away; any other language adds
+              about half an hour while the agent builds a grammar pack first.</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Repo</dt>
+            <dd>Public GitHub template</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__id">
+        <h3 class="entry__name">vibecoding-starterpack</h3>
+        <p class="entry__deck">A repo scaffold that makes documentation fail CI when it
+          drifts.</p>
+        <p class="entry__links">
+          <a class="link" href="https://github.com/batirko/vibecoding-starterpack">Source</a>
+        </p>
+      </div>
+      <div class="entry__main">
+        <div class="prose">
+          <p>Give a coding agent a task and it does the task. It won’t remember last week’s
+          decision, and neither will the next agent. Documentation is the shared memory, and
+          documentation rots. This template puts the docs under CI, so breaking a convention
+          turns the build red.</p>
+        </div>
+
+        <dl class="spec">
+          <div class="spec__row">
+            <dt>Built with</dt>
+            <dd>TypeScript &middot; Vitest &middot; GitHub Actions &middot; no runtime,
+              it&rsquo;s a scaffold</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Status</dt>
+            <dd>Usable now. Fill three files, run <code>npm install &amp;&amp; npm test</code>.</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Repo</dt>
+            <dd>Public GitHub template &middot; MIT</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry__id">
+        <h3 class="entry__name">agentic-job-hunt</h3>
+        <p class="entry__deck">An opinionated job search pipeline that runs inside Claude Code,
+          calibrated against its own results.</p>
+        <p class="entry__links">
+          <a class="link" href="https://github.com/batirko/agentic-job-hunt">Source</a>
+        </p>
+      </div>
+      <div class="entry__main">
+        <div class="prose">
+          <p>It scans job boards, screens by title at no token cost, evaluates the survivors
+          against your actual background, writes tailored CVs, and tracks every application. Then
+          it tells you whether the scores you assigned beforehand predicted anything. On the
+          search it was built from, mostly no.</p>
+        </div>
+
+        <dl class="spec">
+          <div class="spec__row">
+            <dt>Built with</dt>
+            <dd>Node 18+ &middot; Claude Code &middot; Playwright &middot; optional Go dashboard
+              &middot; Greenhouse, Ashby, Lever, Comeet, Workable and public LinkedIn</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Status</dt>
+            <dd>In daily use. It&rsquo;s the pipeline behind my own search.</dd>
+          </div>
+          <div class="spec__row">
+            <dt>Repo</dt>
+            <dd>Public</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="section section--about" aria-labelledby="about">
+    <h2 class="section__title" id="about">About</h2>
+    <div class="prose prose--wide">
+      <p>I&rsquo;m a product manager working on developer platforms. My work sits on the surfaces
+        engineers actually touch: internal developer portals, software catalogs, documentation,
+        self-service onboarding, and more recently the AI features layered on top of them.
+        Earlier, application security tooling that plugs into source control and the editor.</p>
+
+      <p>Nine years in product, most of it on tooling other engineers depend on. My strongest
+        opinion about internal platforms is that most of them are envisioned as products and end
+        up as a pack of services. Adoption is the test. If the paved road isn&rsquo;t genuinely
+        faster than going around it, people go around it.</p>
+
+      <p>I measure this kind of work by whether engineers come back to it on their own. Adoption
+        and friction numbers tell you that.</p>
+
+      <p>The projects above are side work, built in evenings. They circle one question I keep
+        hitting in my day job: when an agent does part of the job, what stops the person from
+        quietly losing the thread? Each project answers it differently, and each one is public
+        so the answer can be argued with.</p>
+
+      <p class="prose__handoff"><a class="link" href="https://linkedin.com/in/vitaliibatyr">LinkedIn</a>
+        has the current version of the working history.</p>
+    </div>
+  </section>
+
+  <section class="section section--close" aria-labelledby="elsewhere">
+    <h2 class="section__title" id="elsewhere">Elsewhere</h2>
+    <p class="elsewhere">
+      <a class="link link--lg" href="https://linkedin.com/in/vitaliibatyr">LinkedIn</a>
+      <a class="link link--lg" href="https://github.com/batirko">GitHub</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <p class="colophon__text">Set in IBM Plex Sans and IBM Plex Mono, both served from this repo.
+    Hand-written HTML and CSS, no build step, no dependencies, no analytics, and nothing to
+    consent to. Built with a coding agent, like everything else here.</p>
+</footer>
+
+<script>
+  /* The loop does not play on its own. A reader starts it. That is the whole script.
+     The animation is 470 KB, so it is fetched on intent rather than on load: a reader who
+     never reaches for the button never pays for it. */
+  (function () {
+    var img = document.getElementById('writtten-frame');
+    var btn = document.getElementById('writtten-toggle');
+    if (!img || !btn) return;
+
+    btn.hidden = false;
+
+    var warmed = false;
+    function warm() {
+      if (warmed) return;
+      warmed = true;
+      new Image().src = img.dataset.loop;
+    }
+    btn.addEventListener('pointerenter', warm);
+    btn.addEventListener('focus', warm);
+
+    btn.addEventListener('click', function () {
+      warm();
+      var playing = btn.getAttribute('aria-pressed') === 'true';
+      img.src = playing ? img.dataset.still : img.dataset.loop;
+      btn.setAttribute('aria-pressed', String(!playing));
+      btn.textContent = playing ? 'Play the loop' : 'Stop the loop';
+    });
+  })();
+</script>
+
+</body>
+</html>
