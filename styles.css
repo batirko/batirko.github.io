@@ -231,18 +231,40 @@ h1, h2, h3 {
 
 /* ── Figures ───────────────────────────────────────────────────────────────
    Real screenshots, hairline border, no re-drawn browser chrome. They take
-   the whole right column, so they run wider than the prose above them. */
+   the whole right column, so they run wider than the prose above them.
+
+   A screenshot is the thing readers reach for, so it opens the project it
+   shows — the same destination as the link in the identity column. The
+   picture stays still; only the border takes the accent. */
 
 .figure {
   margin: var(--space-lg) 0 0;
   max-width: 34rem;
 }
 
+.figure__link {
+  display: block;
+  text-decoration: none;
+}
+
 .figure__img {
   inline-size: 100%;
   border: var(--rule-hair) solid var(--color-rule);
   background: var(--color-paper-2);
+  transition: border-color var(--dur-fast) var(--ease-out);
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .figure__link:hover .figure__img { border-color: var(--color-accent); }
+}
+
+.figure__link:focus-visible {
+  outline: var(--rule-thick) solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.figure__link:focus-visible .figure__img,
+.figure__link:active .figure__img { border-color: var(--color-accent); }
 
 .figure__foot {
   display: flex;
@@ -444,7 +466,9 @@ h1, h2, h3 {
 }
 
 @media (forced-colors: active) {
-  .link:focus-visible, .toggle:focus-visible { outline-color: Highlight; }
+  .link:focus-visible, .toggle:focus-visible, .figure__link:focus-visible {
+    outline-color: Highlight;
+  }
   .figure__img, .toggle { border-color: CanvasText; }
   .section__title::before { background: CanvasText; }
 }

@@ -139,6 +139,20 @@ in charge of AI-assisted work shouldn't start moving without being asked.
 That button is the only script on the page: fifteen lines, inline, no dependency. Without
 JavaScript the still frame shows and no dead control appears.
 
+### 9. The screenshots are links ✅ 2026-08-21
+
+Readers reach for a screenshot expecting it to open the thing it shows, so it does. Each of
+the three figures wraps its image in a link to the same place the identity column already
+points: Agentic Workspaces and writtten to their live sites, mova to its repo.
+
+Nothing new was written for it. The image keeps its description as its alt text, which is also
+what a screen reader announces for the link, so the change adds no copy and needs no
+`content/` entry. On hover and on focus the hairline border takes the accent; the picture
+itself doesn't move, so decision 7 still holds. Page height is unchanged at 4,581px.
+
+writtten's figure now carries two controls: the image opens the site, and the button below it
+plays the loop. The button sits outside the link, so neither one catches the other's click.
+
 ## Standing rules
 
 - **The words live in `content/`.** A design change never rewrites them and never adds new
