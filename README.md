@@ -2,7 +2,7 @@
 
 A one-page portfolio, served as a static site from GitHub Pages.
 
-Four public side projects and a short bio. Hand-written HTML and CSS. No build step, no
+Six side projects and a short bio. Hand-written HTML and CSS. No build step, no
 dependencies, no analytics.
 
 ## Run it
@@ -23,7 +23,7 @@ python3 -m http.server 8000
 | `tokens.css` | Every colour, font, size and space, as named custom properties. |
 | `styles.css` | The layout. It declares no literal colour and no literal font. |
 | `fonts/` | IBM Plex Sans and IBM Plex Mono, self-hosted, 72 KB, with their licence. |
-| `assets/` | Three real product screenshots and one animated loop. |
+| `assets/` | Four real product screenshots and one animated loop. |
 | `content/` | Every word the page may say, verified against real sources. |
 | `docs/` | Concept, plan, and the design brief that the plan now supersedes. |
 | `CLAUDE.md` | How to work in this repo. |
@@ -34,7 +34,7 @@ the words. `content/facts.md` says what may never be claimed and outranks everyt
 ## Design
 
 Built with [Hallmark](https://www.usehallmark.com/), an anti-AI-slop design skill for coding
-agents. Five projects come first, then the bio, then two links. Each project is a row: name,
+agents. Six projects come first, then the bio, then two links. Each project is a row: name,
 one-line and links on the left, prose, screenshot and spec on the right.
 
 Set in IBM Plex Sans and IBM Plex Mono. Charcoal-blue paper with an acid-lime accent, designed

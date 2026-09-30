@@ -22,8 +22,9 @@ name, one-line and links on the left, prose, screenshot and spec on the right. S
 Sans and IBM Plex Mono, served from `fonts/`. Dark charcoal-blue paper with an acid-lime
 accent, adapted to a light counterpart. Nothing on the page moves on its own.
 
-**Five projects, not four**, since 2026-08-21. Agentic Workspaces leads, then writtten, mova,
-vibecoding-starterpack, agentic-job-hunt. Three of the five carry a screenshot.
+**Six projects**, since 2026-09-30. Agentic Workspaces leads, then writtten, whatatake, mova,
+vibecoding-starterpack, agentic-job-hunt. Four of the six carry a screenshot. Decision 10 says
+what the sixth one cost.
 
 ### 8. One description paragraph per project, 180 to 350 characters ✅ 2026-08-21
 
@@ -150,6 +151,24 @@ what a screen reader announces for the link, so the change adds no copy and need
 `content/` entry. On hover and on focus the hairline border takes the accent; the picture
 itself doesn't move, so decision 7 still holds. Page height is unchanged at 4,581px.
 
+### 10. whatatake goes third, with a screenshot ✅ 2026-09-30
+
+Vitalii asked for it straight after writtten. That puts the three live products together at the
+top, each one a click away. The copy and its sources are in
+[`../content/projects.md`](../content/projects.md) § 6.
+
+The card follows every rule the others do. Its paragraph is 273 characters, and its figure is
+a real take's page on the live site, linked to the site's front page.
+
+**It costs 0.9 of a screen.** The page grew from 4,580px to 5,380px on a 1280×900 desktop, so
+from 5.1 screens to 6.0. The card's text and spec take 423px of that, and the figure 377px.
+Without the figure the page would be 5.6 screens. Vitalii's target is 2 to 5 screens, and six
+projects in the current row layout can't meet it either way. The next lever is a layout change,
+not shorter copy.
+
+The repo is private and has no licence, so the card carries **Live** and no **Source**, like
+Agentic Workspaces. Its Repo row says `Private.` and promises nothing more.
+
 writtten's figure now carries two controls: the image opens the site, and the button below it
 plays the loop. The button sits outside the link, so neither one catches the other's click.
 
@@ -169,5 +188,10 @@ plays the loop. The button sits outside the link, so neither one catches the oth
 - **When the Agentic Workspaces repo goes public**, that card changes twice:
   its `Repo` row becomes `Public · MIT`, and it gains a `Source` link beside `Live`. Until
   then the private repo is the reason that card has one link where the others have two.
+- **If the whatatake repo opens**, add a `Source` link beside `Live` and put its licence in
+  the `Repo` row. It has no licence file today.
+- **If the take in the whatatake figure is ever taken down**, recapture the figure from another
+  take with a verdict. `content/projects.md` § The whatatake figure says why the take has to be
+  a neutral one.
 - **Never put the index's own counts on this page.** They are read from a crawl and move every
   time it runs. `content/projects.md` § 5 explains it.

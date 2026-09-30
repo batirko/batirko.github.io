@@ -8,6 +8,9 @@
 > the first slot is for. Agentic Workspaces leads because it is the newest and the only one of
 > the five that is itself a website.
 >
+> **Updated 2026-09-30:** whatatake goes third, straight after writtten, on Vitalii's call. That
+> keeps the three live products together at the top, each one a click away.
+>
 > The numbered headings below are in the order they were researched, not page order.
 
 ---
@@ -333,6 +336,85 @@ than as a fixed figure.
 
 ---
 
+## 6. whatatake
+
+**Live:** https://whatatake.com · **Repo:** https://github.com/batirko/whatatake, private, no
+licence file
+
+> Added 2026-09-30. Every claim below was read on 2026-09-30 out of that repo's `CLAUDE.md`
+> (§ Status and § Hard invariants), `docs/concept.md`, `docs/architecture.md` and
+> `package.json`, out of `gh repo view batirko/whatatake`, and off the live site's home page
+> and its How it works page at https://whatatake.com/about.
+>
+> **Don't source from that repo's `README.md`.** It still describes Phase 0, before any app
+> existed, and it promises a calibration journal the product has since hidden.
+
+### One line
+
+Takes about the future, kept on the record: who said it, when, and how it aged.
+
+Source: the site's own lead sentence, on its home page and its How it works page: "whatatake
+keeps takes about the future on the record: who said it, when, and how it aged."
+
+### Card paragraph
+
+The paragraph itself sits with the others under **The card paragraph** below. Each of its
+sentences comes from one of these:
+
+- "You write down what someone says will happen: your own take, a friend's or someone
+  public's." How it works, § What this is.
+- "Write it however you'd say it, or paste a link. We draft the details for you to check."
+  How it works, § Logging a take. The concept doc says the same: AI drafts a take from what you
+  write, and you check the draft before logging it.
+- "Its words can't be edited after that." How it works, § What this is.
+- "When the date arrives, we remind you to record what happened." How it works, § The verdict.
+- **No model decides the verdict** is hard invariant 3 in that repo: AI proposes, humans
+  resolve, and a verdict is never finalised without a person. Today no AI touches a verdict at
+  all; verdict research waits until after that project's Phase 3.
+
+### Why it belongs on this page
+
+The About section says every project circles one question: when an agent does part of the
+job, what stops the person from losing the thread? whatatake's answer is the verdict. AI drafts
+the take, and a person always decides how it aged. That's why the card ends on the verdict.
+
+### The detail worth showing
+
+A take's page after its verdict. The post it quotes is kept as it was logged, so the take
+survives the post being deleted, and the verdict is added with its own date.
+
+### Stack
+
+Next.js · TypeScript · Supabase Postgres · Drizzle · Gemini for the drafts · Vercel ·
+notifications by email through Resend, or by a Telegram bot
+
+### Status
+
+> Live, early and actively developed. It's free to use, and no money moves through it.
+
+"Early" is the honest word. That repo records that its public-surface phase closed short of
+its traffic goal. The second sentence is the site's own, from How it works § Whose project
+this is.
+
+### Repo row
+
+> **Repo** — Private.
+
+That's all that's true today. Unlike Agentic Workspaces, nothing says this repo will open, so
+the row makes no promise. If it opens, add a **Source** link and put its licence in the row.
+
+### What not to say
+
+- **"It's the record, not the bet."** That repo's governing principle, and a "Not X, but Y"
+  construction, which [facts.md](facts.md) § 5 bans on this page.
+- **Calibration, Brier scores or a track record.** The concept doc still lists them, but the
+  product hid calibration on 2026-09-13.
+- **Stakes, groups or a group-chat bot.** Stakes and groups exist, but they aren't the lead.
+  The group-chat surface isn't built.
+- **Any count** of takes, users or answers. They move daily.
+
+---
+
 ## The card paragraph — one per project, 180 to 350 characters
 
 > Settled 2026-08-21. Each card on the page carries **one** description paragraph, not two.
@@ -343,6 +425,7 @@ than as a fixed figure.
 | --- | ---: |
 | Agentic Workspaces | 276 |
 | writtten | 295 |
+| whatatake | 273 |
 | mova | 259 |
 | vibecoding-starterpack | 265 |
 | agentic-job-hunt | 287 |
@@ -359,6 +442,12 @@ Most AI writing tools generate text for you to edit. writtten does the opposite.
 observations runs beside your document as you revise, flagging contradictions, unclear passages,
 unsupported claims and missing topics. There is no “Apply suggestion” button, and there never
 will be.
+
+### whatatake
+
+You log what someone says will happen: your own take, a friend’s or someone public’s. AI drafts
+the details from a sentence or a link, and you check them. Once logged, the words can’t be
+edited. When the date arrives, you record what happened. No model decides the verdict.
 
 ### mova
 
@@ -384,6 +473,8 @@ no.
 - **Agentic Workspaces** — loses that your copy diverges from the original permanently. The
   strongest single idea, but the paragraph already has to carry both the category and the site.
 - **writtten** — nothing. The card copy above was already in range, so it is used verbatim.
+- **whatatake** — written straight to the range on 2026-09-30, so nothing was cut. It leaves
+  out the quoted post surviving deletion, which the figure caption carries instead.
 - **mova** — loses "chat is the only thing you operate" and "everything it records stays on
   your machine". The deck already says *in plain files you own*, which covers the second.
 - **vibecoding-starterpack** — nothing. Used verbatim.
@@ -403,7 +494,7 @@ Only true numbers. Do not round up, do not add any that aren't here.
 | Fact | Value | Checked |
 | --- | --- | --- |
 | Public repos on the page | 4 | 2026-08-21 |
-| Live products | 1 (writtten.com) | 2026-08-21 |
+| Live products | 3 (writtten.com, agentic-workspaces.com, whatatake.com) | 2026-09-30 |
 | GitHub templates | 2 (mova, vibecoding-starterpack) | 2026-08-21 |
 | Stars | 1 across all four | 2026-08-21 |
 
@@ -472,3 +563,26 @@ Caption:
 The last sentence is not optional. The screenshot names a language and an exam, and the page
 must not let a reader take either as mine. Decision 3 in `docs/plan.md` is the rule; the
 invented learner is recorded under **Asset available** above.
+
+### The whatatake figure
+
+Image: `assets/whatatake-take.png`, a take's page on the live site at
+https://whatatake.com/c/px4nwx7yfry3, captured in light mode on 2026-09-30. Not a mockup.
+
+Caption:
+
+> A take's page after its verdict. The post it quotes is kept as it was logged, and the verdict
+> is added with its own date.
+
+Checked against the frame: the quoted post sits under the take with its author and date, the
+take reads "Was due 14 Sept 2026", and the verdict box reads "Happened" beside "Resolved 28 Sept
+2026".
+
+**Why this take.** Most public takes on the live site are political, from named people. A
+portfolio that carries my name shouldn't show a reader one of those and let them guess why I
+picked it. This one is about markets, and it already has a verdict, which is the part the card
+ends on. The page labels it "Someone else's take", logged by the whatatake account, so it needs
+no disclaimer.
+
+The image links to https://whatatake.com, like the identity column, and not to the take. If the
+take is ever taken down, the link still works.

@@ -2,7 +2,7 @@
 
 Operational guide for agents and humans working in this repo. Read it first, every session.
 
-**What this is:** a one-page portfolio at a GitHub Pages URL. Four public side projects and a
+**What this is:** a one-page portfolio at a GitHub Pages URL. Six side projects and a
 short bio. Static HTML and CSS, no build step, no dependencies.
 
 ## The one principle
