@@ -22,9 +22,9 @@ name, one-line and links on the left, prose, screenshot and spec on the right. S
 Sans and IBM Plex Mono, served from `fonts/`. Dark charcoal-blue paper with an acid-lime
 accent, adapted to a light counterpart. Nothing on the page moves on its own.
 
-**Six projects**, since 2026-09-30. Agentic Workspaces leads, then writtten, whatatake, mova,
-vibecoding-starterpack, agentic-job-hunt. Four of the six carry a screenshot. Decision 10 says
-what the sixth one cost.
+**Seven projects**, since 2026-10-05. Agentic Workspaces leads, then writtten, whatatake,
+research-and-learn, mova, vibecoding-starterpack, agentic-job-hunt. Five of the seven carry a
+screenshot. Decisions 10 and 11 say what the sixth and seventh cost.
 
 ### 8. One description paragraph per project, 180 to 350 characters ✅ 2026-08-21
 
@@ -171,6 +171,22 @@ Agentic Workspaces. Its Repo row says `Private.` and promises nothing more.
 
 writtten's figure now carries two controls: the image opens the site, and the button below it
 plays the loop. The button sits outside the link, so neither one catches the other's click.
+
+### 11. research-and-learn goes fourth, with a screenshot ✅ 2026-10-05
+
+Vitalii asked for the repo to be added. Placement was left open, so it sits after the three live
+products and ahead of mova: it's the newest public repo, and like Agentic Workspaces and mova it
+is a workspace you clone and work inside. Moving it is a one-block cut and paste. Copy and
+sources are in [`../content/projects.md`](../content/projects.md) § 7.
+
+The card follows every rule the others do. Its paragraph is 305 characters. Its figure is the
+top 720px of the repo's own topic-page screenshot, and the caption says the guide behind it is a
+demo with an invented case. The image links to the repo, because there's no live site.
+
+**It costs 0.9 of a screen, and the page is now 6.9.** The page grew from 5,380px to 6,178px on
+a 1280×900 desktop, measured with every image loaded. The card takes 798px. Decision 10 already
+said the row layout can't reach Vitalii's 2 to 5 screens at six projects, and seven makes it
+worse. The next lever is still a layout change, not shorter copy.
 
 ## Standing rules
 

@@ -11,6 +11,10 @@
 > **Updated 2026-09-30:** whatatake goes third, straight after writtten, on Vitalii's call. That
 > keeps the three live products together at the top, each one a click away.
 >
+> **Updated 2026-10-05:** research-and-learn goes fourth, straight after the three live
+> products and ahead of mova. It's the newest public repo, and like Agentic Workspaces and mova
+> it's a workspace you clone and work inside. That order is my call and easy to change.
+>
 > The numbered headings below are in the order they were researched, not page order.
 
 ---
@@ -415,6 +419,84 @@ the row makes no promise. If it opens, add a **Source** link and put its licence
 
 ---
 
+## 7. research-and-learn
+
+**Repo:** https://github.com/batirko/research-and-learn · **Licence:** MIT · **Public**
+**Not a GitHub template**, and no live site.
+
+> Added 2026-10-05. Every claim below was read on 2026-10-05 out of that repo's `README.md`,
+> `AGENTS.md`, `docs/concept.md`, `docs/decisions.md` and `guide.toml`, out of
+> `gh repo view batirko/research-and-learn`, and off the five screenshots in `docs/screenshots/`.
+> The repo was created the same day, so "early" is literal.
+
+### One line
+
+An agentic workspace that builds you an offline, ranked guide to a subject you must understand
+by a date.
+
+Source: the repo's own description on GitHub, lightly trimmed. It reads "Agentic workspace for
+Claude Code or any coding agent that reads AGENTS.md: it builds you an offline, ranked guide to
+a subject you must understand by a date".
+
+### Card paragraph
+
+The paragraph sits with the others under **The card paragraph** below. Each of its sentences
+comes from one of these:
+
+- "You get a guide to a subject you must understand by a date: written for you, ranked by what
+  matters, and readable offline." README, opening paragraph.
+- "It interviews you, researches the subject, proposes a ranked map of topics that fits your
+  hours, then runs subagents that research, write, check and build the guide one topic at a
+  time." README, opening paragraph.
+- "Every outside claim has a source you opened in this session." and "An unknown is written as
+  an open question, never as a guess." `AGENTS.md`, hard rule 1. These are rules the agent is
+  told to work to, backed by a lint and a format check. The paragraph says "its rules require",
+  and it must not say "every claim is sourced" as if the tool guaranteed it.
+
+### Why it belongs on this page
+
+It's a workspace you clone and work inside, like mova, and it answers the About section's
+question the way writtten and mova do. The reader stays in charge at three points: the
+set-up interview, the kickoff and the pilot. Facts about your own case carry a tag that says
+where they came from, and a guess isn't allowed to pass as one.
+
+### The detail worth showing
+
+A topic page from the repo's test guide. Rank, size and reading time sit at the top, and every
+section in the contents carries a rank, so a reader can see what to skip.
+
+### Stack
+
+Python 3.11 or later, standard library only · plain JavaScript · nothing loads from the
+network · any coding agent that reads `AGENTS.md` (built and tested with Claude Code)
+
+Source: README § Start and § Pages built from plain text; `docs/concept.md` § The engine.
+
+### Status
+
+> Early and actively developed. The method comes from one 45-topic guide, built for one reader
+> on a deadline.
+
+The second sentence is from the README's third paragraph and `docs/concept.md` § Where it comes
+from. It says nothing about the field, the reader or the case, which `docs/concept.md` open
+decision 2 settled the same way.
+
+### Repo row
+
+> **Repo** — Public · MIT
+
+### What not to say
+
+- **Any claim that Agentic Workspaces lists it.** `docs/concept.md` says the project meets the
+  index's four rules by design. Nothing there says the crawler has indexed it.
+- **The size of the source guide beyond "45-topic"**: the word count, the two days, the token
+  costs. They describe a private build, and they invite a reader to ask whose it was.
+- **That it works on any subject.** The README says the test guide proves it on bees. One test
+  guide isn't a track record.
+- **Any count** of topics or stars. They move.
+
+---
+
 ## The card paragraph — one per project, 180 to 350 characters
 
 > Settled 2026-08-21. Each card on the page carries **one** description paragraph, not two.
@@ -426,6 +508,7 @@ the row makes no promise. If it opens, add a **Source** link and put its licence
 | Agentic Workspaces | 276 |
 | writtten | 295 |
 | whatatake | 273 |
+| research-and-learn | 305 |
 | mova | 259 |
 | vibecoding-starterpack | 265 |
 | agentic-job-hunt | 287 |
@@ -448,6 +531,13 @@ will be.
 You log what someone says will happen: your own take, a friend’s or someone public’s. AI drafts
 the details from a sentence or a link, and you check them. Once logged, the words can’t be
 edited. When the date arrives, you record what happened. No model decides the verdict.
+
+### research-and-learn
+
+You say what you need to understand and by when. Your coding agent interviews you, researches the
+subject, and runs subagents that write the guide one topic at a time, ranked by what matters and
+readable offline. Its rules require a source for every outside claim, and an unknown becomes an
+open question.
 
 ### mova
 
@@ -475,6 +565,9 @@ no.
 - **writtten** — nothing. The card copy above was already in range, so it is used verbatim.
 - **whatatake** — written straight to the range on 2026-09-30, so nothing was cut. It leaves
   out the quoted post surviving deletion, which the figure caption carries instead.
+- **research-and-learn** — written straight to the range on 2026-10-05, so nothing was cut. It
+  leaves out the portal's features, the three tiers and four ranks, the cost in tokens, and the
+  private-facts blocks. The figure carries the ranks, and the rest is in the README.
 - **mova** — loses "chat is the only thing you operate" and "everything it records stays on
   your machine". The deck already says *in plain files you own*, which covers the second.
 - **vibecoding-starterpack** — nothing. Used verbatim.
@@ -493,7 +586,7 @@ Only true numbers. Do not round up, do not add any that aren't here.
 
 | Fact | Value | Checked |
 | --- | --- | --- |
-| Public repos on the page | 4 | 2026-08-21 |
+| Public repos on the page | 5 | 2026-10-05 |
 | Live products | 3 (writtten.com, agentic-workspaces.com, whatatake.com) | 2026-09-30 |
 | GitHub templates | 2 (mova, vibecoding-starterpack) | 2026-08-21 |
 | Stars | 1 across all four | 2026-08-21 |
@@ -550,6 +643,25 @@ whole card. The second stops anyone reading the live counters as fixed figures, 
 `site/build.ts` derives every one of them from the classified data.
 
 This card carries **Live** and no **Source**, per the section above.
+
+### The research-and-learn figure
+
+Image: `assets/research-and-learn-topic.png`, the top 720px of the repo's own
+`docs/screenshots/topic.png`, resized to 1400px wide. It's the portal of the repo's test guide,
+not a mockup.
+
+Caption:
+
+> A topic page: its rank, size and reading time at the top, and every section ranked in the
+> contents. This one comes from the repo's test guide, a demo on bees with an invented case.
+
+Checked against the frame: the badge reads "Critical" beside "Size S" and "2 min of reading",
+and the contents on the right show a filled or hollow rank marker and a time beside each
+section. The README says the screenshots show the engine's test guide, "an invented first
+season with bees". The last sentence matters for the same reason as mova's: the page must not
+let a reader take the case as a real one of mine.
+
+The image links to the repo, since there's no live site.
 
 ### The mova figure
 
